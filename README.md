@@ -110,3 +110,54 @@ Status: `200 OK`
 
 The To-Do List Application API allows users to manage tasks with ease. It provides simple CRUD operations without requiring authentication. This API can be integrated into any front-end application to enhance task management functionality.
 
+
+# Mocha Testing steps
+### Step 1. Install Mocha and Chai (If Not Installed)
+If you haven’t installed Mocha and Chai yet, do it now:
+```
+npm install --save-dev mocha chai
+```
+
+### Step 2. Update package.json (Optional)
+Modify package.json to add a test script:
+
+```
+"scripts": {
+  "test": "mocha"
+}
+```
+  Now, you can run tests using:
+```
+npm test
+```
+
+### Step 3. Running Tests Correctly
+Instead of using node, always run tests with mocha:
+```
+npx mocha tests/example.test.js
+```
+  or
+```
+npm test   # If you configured package.json
+```
+
+### Step 4. Expected Output
+Your output should be similar to:
+
+Server running on port 3000
+
+  API Tests
+    ✔ should return health status
+    ✔ should create a new task (149ms)
+    ✔ should GET all tasks (45ms)
+    ✔ should update an existing task (59ms)
+    ✔ should delete an existing task
+
+  5 passing (311ms)
+
+### Step 5. Debugging & Termination
+If the tests get stuck, use CTRL + C to terminate.
+If mocha is not found, try:
+```
+npx mocha
+```
